@@ -60,3 +60,7 @@ Entre os critérios de avaliação estão:
 * Documentação de código
 * Documentação do projeto (readme)
 * Performance
+
+# A entrega
+
+Você deverá fazer um fork deste projeto e submeter um pull request.
