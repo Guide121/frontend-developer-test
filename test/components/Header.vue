@@ -4,7 +4,7 @@
       Marvel
     </h1>
 
-    <button class="cart-button">Carrinho</button>
+    <Cart />
   </div>
 </template>
 
@@ -16,13 +16,14 @@
   top: 0;
   background: #ee403c;
   width: 100%;
-  padding: 15px;
+  padding: 25px;
   color: white;
   font-family: Marvel;
   font-size: 1.8rem;
   text-transform: uppercase;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .cart-button {

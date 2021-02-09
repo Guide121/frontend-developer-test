@@ -15,7 +15,8 @@
     "crypto-js": "^4.0.0",
     "global": "^4.4.0",
     "nuxt": "^2.14.12",
-    "vue-cli": "^2.9.6"
+    "vue-cli": "^2.9.6",
+    "vue-material": "^1.0.0-beta-15"
   },
   "devDependencies": {
     "@nuxt/types": "^2.14.12",

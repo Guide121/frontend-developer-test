@@ -1,4 +1,4 @@
-interface StateTypes {
+export interface StateTypes {
   counter: number;
 }
 
