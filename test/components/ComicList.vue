@@ -15,64 +15,82 @@
           :id="comic.id"
           :title="comic.title"
           :image="comic.thumbnail.path + '.' + comic.thumbnail.extension"
+          :price="comic.prices[0].price"
         />
       </div>
+    </div>
+    <div v-if="!isLoading">
+      <div class="loadMore" v-if="!loadingMore" v-on:click="getComics">
+        Carregar mais
+      </div>
+      <md-progress-spinner
+        v-else
+        :md-diameter="50"
+        :md-stroke="3"
+        md-mode="indeterminate"
+        class="md-accent"
+      ></md-progress-spinner>
+      <div class="info">Foram carregados {{ totalComics }} quadrinhos</div>
     </div>
   </div>
 </template>
 
 <script>
 import CryptoJs from "crypto-js";
-import { MdProgressSpinner } from "vue-material";
 
 import api from "@/services/marvel";
 
 export default {
   data() {
     return {
-      info: [],
-      isLoading: true
+      info: this.$store.state.comics,
+      totalComics: this.$store.state.comics.length,
+      isLoading: true,
+      loadingMore: false
     };
   },
   mounted() {
-    const timestamp = new Date().getDate();
-    const privateKey = process.env.PRIVATE_KEY;
-    const publicKey = process.env.PUBLIC_KEY;
-
-    const hash = CryptoJs.MD5(`${timestamp}${privateKey}${publicKey}`);
-
-    api
-      .get(`/comics?ts=${timestamp}&apikey=${publicKey}&hash=${hash}`)
-      .then(response => {
-        this.isLoading = false;
-        this.info = response.data.data.results;
-      });
-  },
-  methods: {
-    getRandomNumber() {
-      return Math.floor(Math.random() * this.info.length);
-    },
-    addToFavorites(comidId) {
-      const favoriteComicsList =
-        JSON.parse(localStorage.getItem("favoriteComics")) || [];
-
-      favoriteComicsList.push(comidId);
-
-      localStorage.setItem(
-        "favoriteComics",
-        JSON.stringify(favoriteComicsList)
-      );
+    if (this.info.length > 0) {
+      this.isLoading = false;
+    } else {
+      this.getComics();
     }
   },
-  computed: {
-    infoRaro() {
-      return Array.from({ length: 10 }, () => this.getRandomNumber());
+  watch: {
+    info() {
+      if (this.info.length < 200) {
+        this.getComics();
+      }
+    }
+  },
+  methods: {
+    getComics() {
+      this.loadingMore = true;
+
+      const timestamp = new Date().getDate();
+      const privateKey = process.env.PRIVATE_KEY;
+      const publicKey = process.env.PUBLIC_KEY;
+
+      const hash = CryptoJs.MD5(`${timestamp}${privateKey}${publicKey}`);
+      const length = this.info.length;
+
+      api
+        .get(
+          `/comics?offset=${length}&ts=${timestamp}&apikey=${publicKey}&hash=${hash}`
+        )
+        .then(response => {
+          this.$store.commit("getComics", response.data.data.results);
+
+          this.loadingMore = false;
+          this.isLoading = false;
+          this.totalComics = this.info.length;
+        });
     }
   }
 };
 </script>
 
-<style scope>
+<style scoped>
 .comic-list-container {
   width: 100%;
   padding: 50px;
@@ -80,5 +98,26 @@ export default {
   row-gap: 30px;
   column-gap: 20px;
   grid-template-columns: repeat(4, 1fr);
+}
+
+.title {
+  text-align: center;
+}
+
+.loadMore {
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: cadetblue;
+  cursor: pointer;
+}
+
+.loadMore:hover {
+  text-decoration: underline;
+}
+
+.info {
+  font-size: 1.2rem;
+  text-align: right;
+  margin: 20px;
 }
 </style>

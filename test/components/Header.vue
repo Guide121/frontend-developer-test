@@ -12,8 +12,7 @@
 
 <style>
 .header {
-  position: absolute;
-  top: 0;
+  /* position: fixed; */
   background: #ee403c;
   width: 100%;
   padding: 25px;

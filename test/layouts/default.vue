@@ -12,7 +12,7 @@ html {
 }
 
 .main-container {
-  margin-top: 17vh;
+  margin-top: 20px;
 }
 
 *,

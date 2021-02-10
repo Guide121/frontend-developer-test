@@ -1,12 +1,26 @@
+interface CartProps {
+  id: number;
+  title: string;
+  image: string;
+  price: number;
+}
+
 export interface StateTypes {
-  counter: number;
+  cart: CartProps[];
+  comics: {}[];
 }
 
 export default {
-  increment(state: StateTypes) {
-    state.counter++;
+  addToCart(state: StateTypes, comic: CartProps) {
+    state.cart.push(comic);
   },
-  decrement(state: StateTypes) {
-    state.counter--;
+  removeFromCart(state: StateTypes, id: number) {
+    const foundComic = state.cart.find(comicId => id);
+
+    state.cart.splice(foundComic, 1);
+  },
+
+  getComics(state: StateTypes, list: []) {
+    state.comics.push(...list);
   }
 };

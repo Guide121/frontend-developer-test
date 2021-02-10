@@ -1,7 +1,9 @@
 <template>
-  <div class="container">
+  <div>
     <Header />
-    <ComicList />
+    <div class="container">
+      <ComicList />
+    </div>
   </div>
 </template>
 
@@ -13,16 +15,10 @@ import "vue-material/dist/theme/default.css";
 
 Vue.use(VueMaterial);
 
-export default {
-  computed: {
-    counter() {
-      return this.$store.state.counter;
-    }
-  }
-};
+export default {};
 </script>
 
-<style>
+<style scoped>
 @import url("https://fonts.googleapis.com/css2?family=Marvel:wght@400;700&display=swap");
 
 .container {
@@ -33,4 +29,8 @@ export default {
   align-items: center;
   text-align: center;
 }
+</style>
+
+<style>
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic%7cmaterial+Icons");
 </style>
