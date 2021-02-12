@@ -1,66 +1,46 @@
-# O trabalho
+### About [Guide121](https://guide121.com)
+Guide121 is a company that provides a personalized experience for travelers through chatbots.
 
-A Guide121 está revolucionando o modo de interação entre humanos e hóteis através de chatbots! Se você quer fazer parte dessa mudança e ainda trabalhar com:
+### Test for Front-end developer at guide121
+This test is for we know your skills, logic and quality of code.
 
-* Práticas ágeis como Kanban / Scrum
-* AWS
-* Escalabilidade
-* Microservicese aplicações distribuídas
-* Kubernetes
-* Git
-* VueJS
-* StoryBook
+### Guidelines
+First, make a fork and clone the project in your computer and create a new branch with **your-name**.
 
-# Tecnologias
+After setup the project you will follow this instructions for make test:
 
-Devem ser utilizadas as seguintes tecnologias :
+# Requirements:
+
+You need use some skills like:
 
 * Vue.js and NuxtJS
 * Vuex
-* Testes (gostaríamos que você fizesse, porém é opcional)
-* Typescript (opcional)
-* Qualquer tecnologia ou padrão complementar às citadas anteriormente são permitidas com as devidas justificativas no README.
+* Tests (optional, but we love ❤️)
+* Typescript (optional)
+* Scss / Less (optional)
+* You can add some tecnologies to complement your project, but please write on README why you made it.
 
-# Desafio
-## Crie uma Single Page Application de uma loja de quadrinhos utilizando a API da Marvel para todos os consumos de dados.
+# The test
+You need create a single page application using this [template](https://www.figma.com/file/sydbhXcU86LPwVUIzjlwEO/FREEBIES-Landingpage-LaslesVPN-Community?node-id=0%3A1).
 
-API: [https://developer.marvel.com](https://developer.marvel.com)
+Don't forget about the speed optimization of the App or the user experience.
 
-Modo básico o App consiste de uma tela de lista de quadrinhos, uma tela de detalhe do quadrinho (comics) e uma funcionalidade de checkout dos quadrinhos adicionados.
+**obs**: If have acknowledgement at SEO, please use it!
 
-Qualquer funcionalidade extra é bem vinda para agregar na solução básica proposta.
+No have deadline.
 
-O layout e por sua conta, seja criativo.
-A arquitetura é por sua conta, seja esperto.
+## How your assessment is made
 
-Você será avaliado pela qualidade do código, pela modularidade, pela legibilidade, pela criatividade, pela quantidade de funcionalidades básicas e extra.
+Among the evaluation criteria are:
 
-Não esqueça da otimização de velocidade da App nem da experiência do usuário.
-
-Fatores Negociais:
-
-* 10% dos quadrinhos carregados devem ser marcados como raros (aleatoriamente na própria fonte ao carregar o REST).
-* O checkout deve contemplar a opção de código de desconto (pode validar mock, sem rest).
-* Faça um rest simulado (mock) para receber cupons de desconto na App.
-* (OPCIONAL) Existem dois tipos de cupons: Cupons raros e cupons comuns. Cupons comuns dão desconto somente para quadrinhos comuns, enquanto raros podem ser usados em qualquer tipo.
-
-Não existe prazo.
-
-# Arquitetura da solução/O que fazer
-
-No arquivo README do projeto explique o funcionamento e a solução adotada na sua implementação do desafio.
-
-## Avaliação
-
-Entre os critérios de avaliação estão:
-
-* Usabilidade
-* Criatividade
-* Código limpo e organização
-* Documentação de código
-* Documentação do projeto (readme)
+* Usability
+* Creativity
+* Clean code and organization
+* Code documentation
+* Project documentation (readme)
 * Performance
+* The delivery
 
-# A entrega
+# The delivery
 
-Você deverá fazer um fork deste projeto e submeter um pull request.
+You should fork this project and submit a pull request.
