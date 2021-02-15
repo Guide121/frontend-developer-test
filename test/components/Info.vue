@@ -30,7 +30,7 @@ export default {}
 
 <style scoped>
 .info {
-  margin: 100px auto 70px;
+  margin: 100px auto 50px;
   column-count: 3;
   column-rule: 2px solid #eeeff2;
   background: #fff;

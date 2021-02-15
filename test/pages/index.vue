@@ -4,6 +4,7 @@
     <About />
     <Info />
     <Features />
+    <Pricing />
   </div>
 </template>
 

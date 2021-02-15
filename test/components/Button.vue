@@ -1,7 +1,13 @@
 <template>
   <div>
     <button
-      :class="primary ? 'primary' : 'secondary'"
+      :class="
+        primary && bordered
+          ? 'primary bordered'
+          : primary && !bordered
+          ? 'primary'
+          : 'secondary'
+      "
       class="button"
       @click="click"
     >
@@ -24,6 +30,11 @@ export default {
     },
 
     primary: {
+      type: Boolean,
+      default: false,
+    },
+
+    bordered: {
       type: Boolean,
       default: false,
     },
@@ -55,5 +66,11 @@ export default {
   border-radius: 20px;
   width: 150px;
   padding: 10px;
+}
+
+.bordered {
+  padding: 10px;
+  width: 150px;
+  border-radius: 20px;
 }
 </style>
