@@ -135,7 +135,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 .title {
   color: #0b132a;
   margin: 0 auto;

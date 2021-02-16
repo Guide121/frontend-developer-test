@@ -7,6 +7,8 @@
     <Pricing />
     <Network />
     <Testimonials />
+    <Subscribe />
+    <Help />
   </div>
 </template>
 
