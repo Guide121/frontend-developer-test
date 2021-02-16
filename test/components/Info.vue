@@ -36,7 +36,7 @@ export default {}
   background: #fff;
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 0px 30px 70px rgba(13, 16, 37, 0.4);
+  box-shadow: 0px 5px 15px rgba(13, 16, 37, 0.1);
 }
 
 .info div {

@@ -5,6 +5,7 @@
     <Info />
     <Features />
     <Pricing />
+    <Network />
   </div>
 </template>
 

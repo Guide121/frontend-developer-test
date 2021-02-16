@@ -23,7 +23,7 @@ export default {}
 
 <style scoped>
 .header-container {
-  width: 93%;
+  width: 88%;
   margin: 0 auto 40px;
   padding: 25px;
   justify-content: space-between;
