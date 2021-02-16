@@ -3,11 +3,11 @@
     <img src="@/assets/logo.png" />
 
     <nav>
-      <NuxtLink to="#">About</NuxtLink>
-      <NuxtLink to="#">Features</NuxtLink>
-      <NuxtLink to="#">Pricing</NuxtLink>
-      <NuxtLink to="#">Testimonials</NuxtLink>
-      <NuxtLink to="#">Help</NuxtLink>
+      <button @click="scroll('about')">About</button>
+      <button @click="scroll('features')">Features</button>
+      <button @click="scroll('pricing')">Pricing</button>
+      <button @click="scroll('testimonials')">Testimonials</button>
+      <button @click="scroll('help')">Help</button>
     </nav>
 
     <div>
@@ -18,7 +18,23 @@
 </template>
 
 <script>
-export default {}
+import ScrollTo from 'scroll-animate-to'
+
+export default {
+  methods: {
+    scroll(id) {
+      const element = document.getElementById(id)
+
+      const scroll = new ScrollTo({
+        target: element,
+        animationFn: 'easeOut',
+        duration: 100,
+      })
+
+      scroll.scroll()
+    },
+  },
+}
 </script>
 
 <style scoped>
@@ -31,6 +47,13 @@ export default {}
   align-items: center;
 }
 
+.header-container div {
+  display: flex;
+  width: 20%;
+  justify-content: center;
+  align-items: center;
+}
+
 nav {
   width: 50%;
   display: flex;
@@ -38,12 +61,19 @@ nav {
   justify-content: space-around;
 }
 
-nav a {
+nav button {
   color: #4f5665;
+  background: transparent;
+  border: 0;
+  font-family: Rubik, sans-serif;
+  font-weight: 400;
+  font-size: 1rem;
+  cursor: pointer;
+  outline: none;
   text-decoration: none;
 }
 
-nav a:hover {
+nav button:hover {
   text-decoration: underline;
 }
 
@@ -51,7 +81,7 @@ nav a:hover {
   background: transparent;
   font-family: Rubik, sans-serif;
   font-weight: 500;
-  width: 150px;
+  width: 100px;
   padding: 10px;
   outline: none;
   cursor: pointer;

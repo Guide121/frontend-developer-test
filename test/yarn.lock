@@ -9755,6 +9755,11 @@ schema-utils@^3.0.0:
     ajv "^6.12.5"
     ajv-keywords "^3.5.2"
 
+scroll-animate-to@^1.0.4:
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/scroll-animate-to/-/scroll-animate-to-1.0.4.tgz#f09866b029df8db12ab7a116a96aa7b2193eb46b"
+  integrity sha512-hrn4JCbtcrPvTQ/+W1uwVmPDeSjXJkAGVBzickE8497PqYiVobaSu6vKwDzXrgdzXR1Tm4aP8/x51kABVHQUDA==
+
 "semver@2 || 3 || 4 || 5", semver@^5.4.1, semver@^5.5.0, semver@^5.5.1, semver@^5.6.0:
   version "5.7.1"
   resolved "https://registry.yarnpkg.com/semver/-/semver-5.7.1.tgz#a954f931aeba508d307bbf069eff0c01c96116f7"

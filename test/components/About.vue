@@ -1,5 +1,5 @@
 <template>
-  <div class="main-container about-container">
+  <div id="about" class="main-container about-container">
     <div class="info">
       <h1>Want anything to be easy with <b>LaslesVPN.</b></h1>
 
