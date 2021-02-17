@@ -9,7 +9,7 @@
           : 'secondary'
       "
       class="button"
-      @click="click"
+      @click="click()"
     >
       {{ title }}
     </button>
@@ -26,7 +26,7 @@ export default {
 
     click: {
       type: Function,
-      default: () => true,
+      default: () => {},
     },
 
     primary: {
@@ -38,6 +38,9 @@ export default {
       type: Boolean,
       default: false,
     },
+  },
+  mounted() {
+    console.log(this.click)
   },
 }
 </script>
@@ -61,7 +64,7 @@ export default {
 
 .secondary {
   background: transparent;
-  border: 1px solid #f53838;
+  border: 2px solid #f53838;
   color: #f53838;
   border-radius: 20px;
   width: 150px;

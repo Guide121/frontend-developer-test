@@ -7,14 +7,14 @@
     </p>
 
     <div id="cards-list" class="cards-list">
-      <div
+      <!-- <div
         v-for="(card, index) in comments"
         :id="index"
         :key="index"
         class="card"
         :class="selected == index && 'selected'"
-      >
-        <div class="info">
+      > -->
+      <!-- <div class="info">
           <div>
             <img src="https://picsum.photos/50/50" class="profile" />
             <div class="name-address">
@@ -33,8 +33,17 @@
           fugiat, dolor repellat culpa perferendis ipsam. Optio eaque reiciendis
           modi fuga illo! Sapiente veritatis placeat sequi nemo harum illo
           perferendis iste!"
-        </p>
-      </div>
+        </p> -->
+      <TestimonialCard
+        v-for="(card, index) in comments"
+        :id="index"
+        :key="index"
+        :card="card"
+        :index="index"
+        class="card"
+        :class="selected == index && 'selected'"
+      />
+      <!-- </div> -->
     </div>
     <div class="buttons">
       <div>
@@ -166,54 +175,8 @@ export default {
 }
 
 .selected {
+  transition: 0.5s;
   border: 2px solid #f53838;
-}
-
-.info {
-  display: flex;
-  padding: 0 20px;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.info div {
-  display: flex;
-  align-items: center;
-}
-
-.info .name-address {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  margin-left: 10px;
-}
-
-.name {
-  color: #0b132a;
-  font-weight: 500;
-}
-
-.address {
-  color: #4f5665;
-  font-weight: 400;
-}
-
-.info img.profile {
-  border-radius: 50%;
-}
-
-.comment {
-  color: #0b132a;
-  margin: 10px 0;
-  line-height: 25px;
-}
-
-.evaluation {
-  color: #0b132a;
-}
-
-.evaluation img {
-  margin: 0 10px;
 }
 
 .buttons {
@@ -225,13 +188,13 @@ export default {
 .buttons button {
   background: #dde0e4;
   border: none;
-  width: 10px;
-  height: 10px;
+  width: 15px;
+  height: 15px;
   border-radius: 50%;
   margin: 0 5px 30px;
   cursor: pointer;
   outline: none;
-  animation: activate 1s;
+  transition: 0.5s;
 }
 
 .buttons .next-previous button {
@@ -258,8 +221,8 @@ button.previous:disabled {
 }
 
 button.button-selected {
-  width: 30px;
-  border-radius: 5px;
+  width: 35px;
+  border-radius: 10px;
   background: #f53838;
   animation: activate 1s;
 }

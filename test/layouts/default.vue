@@ -17,6 +17,10 @@ html {
   scroll-behavior: smooth;
 }
 
+button {
+  outline: none;
+}
+
 *,
 *::before,
 *::after {
