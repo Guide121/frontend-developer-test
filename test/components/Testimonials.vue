@@ -7,33 +7,6 @@
     </p>
 
     <div id="cards-list" class="cards-list">
-      <!-- <div
-        v-for="(card, index) in comments"
-        :id="index"
-        :key="index"
-        class="card"
-        :class="selected == index && 'selected'"
-      > -->
-      <!-- <div class="info">
-          <div>
-            <img src="https://picsum.photos/50/50" class="profile" />
-            <div class="name-address">
-              <p class="name">{{ card.name }}</p>
-              <p class="address">City</p>
-            </div>
-          </div>
-          <div class="evaluation">
-            4.5
-            <img src="https://picsum.photos/10/10" />
-          </div>
-        </div>
-
-        <p class="comment">
-          "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-          fugiat, dolor repellat culpa perferendis ipsam. Optio eaque reiciendis
-          modi fuga illo! Sapiente veritatis placeat sequi nemo harum illo
-          perferendis iste!"
-        </p> -->
       <TestimonialCard
         v-for="(card, index) in comments"
         :id="index"
@@ -43,7 +16,6 @@
         class="card"
         :class="selected == index && 'selected'"
       />
-      <!-- </div> -->
     </div>
     <div class="buttons">
       <div>
@@ -82,25 +54,20 @@ export default {
   data() {
     return {
       selected: 0,
-      comments: [
-        {
-          name: 'Débora',
-        },
-        {
-          name: 'ASQWE',
-        },
-        {
-          name: 'Débora',
-        },
-        {
-          name: 'Débora',
-        },
-        {
-          name: 'Débora',
-        },
-      ],
+      // comments: this.$store.state.evaluations,
     }
   },
+
+  computed: {
+    comments() {
+      return this.$store.state.evaluations
+    },
+  },
+
+  mounted() {
+    this.$store.dispatch('getEvaluations')
+  },
+
   methods: {
     select(id) {
       this.selected = id

@@ -2,23 +2,20 @@
   <div>
     <div class="info">
       <div>
-        <img src="https://picsum.photos/50/50" class="profile" />
+        <img :src="card.image" class="profile" />
         <div class="name-address">
           <p class="name">{{ card.name }}</p>
-          <p class="address">City</p>
+          <p class="address">{{ card.city }}</p>
         </div>
       </div>
       <div class="evaluation">
-        4.5
-        <img src="https://picsum.photos/10/10" />
+        {{ card.evaluation }}
+        <img src="@/assets/star.png" />
       </div>
     </div>
 
     <p class="comment">
-      "Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium
-      fugiat, dolor repellat culpa perferendis ipsam. Optio eaque reiciendis
-      modi fuga illo! Sapiente veritatis placeat sequi nemo harum illo
-      perferendis iste!"
+      {{ card.comment }}
     </p>
   </div>
 </template>

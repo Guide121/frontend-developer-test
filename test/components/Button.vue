@@ -9,7 +9,6 @@
           : 'secondary'
       "
       class="button"
-      @click="click()"
     >
       {{ title }}
     </button>
@@ -24,11 +23,6 @@ export default {
       default: 'Button',
     },
 
-    click: {
-      type: Function,
-      default: () => {},
-    },
-
     primary: {
       type: Boolean,
       default: false,
@@ -38,9 +32,6 @@ export default {
       type: Boolean,
       default: false,
     },
-  },
-  mounted() {
-    console.log(this.click)
   },
 }
 </script>
